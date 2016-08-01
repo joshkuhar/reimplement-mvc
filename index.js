@@ -120,7 +120,7 @@ $(document).ready(function() {
 /*
 var Model = function(){
   this.questions = [["Question 1", "a"], ["Questions 2", "b"], ["Question 3", "c" ]];
-  this.answers = ["a", "b", "c"];
+  this.answers = ['0815', '2B', 'BAM128', 'Barely'];
   this.testQuestion = null;
 };
 Model.prototype.getQuestion = function(questionNumber){
@@ -149,12 +149,14 @@ View.prototype.question = function(element, test){
 
 View.prototype.displayAnswers = function(element, answers){
   for(var answer in answers){
-    $(element).append('<li><button type="button">' + answer + '</button></li>');
+    $(element).append('<li><button type="button">' + answers[answer] + '</button></li>');
   }
 };
 
 answers = ['0815', '2B', 'BAM128', 'Barely'];
 var view = new View();
+
+view.displayAnswers('.answers', answers);
 
 
 
