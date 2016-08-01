@@ -121,30 +121,40 @@ $(document).ready(function() {
 var Model = function(){
   this.questions = [["Question 1", "a"], ["Questions 2", "b"], ["Question 3", "c" ]];
   this.answers = ["a", "b", "c"];
+  this.testQuestion = null;
 };
-
 Model.prototype.getQuestion = function(questionNumber){
   this.question = this.questions[questionNumber][0];
   console.log(this.question);
   console.log("Choices: " + this.answers);
 };
-
 Model.prototype.showAnswers = function(){
   console.log(this.answers);
 };
-
 Model.prototype.checkAnswer = function(answer, questionNumber){
   this.correct = this.questions[questionNumber][1];
   if(answer === this.correct){
-    console.log("correct " + this.correct);
+    this.testQuestion = this.correct;
+  }
+};
+var questionNumber = 1;
+var quiz = new Model();
+
+var View = function(){};
+
+View.prototype.question = function(element, test){
+  $(element).empty();
+  $(element).append(test);
+};
+
+View.prototype.displayAnswers = function(element, answers){
+  for(var answer in answers){
+    $(element).append('<li><button type="button">' + answer + '</button></li>');
   }
 };
 
-var questionNumber = 1;
-
-var quiz = new Model();
-
-
+answers = ['0815', '2B', 'BAM128', 'Barely'];
+var view = new View();
 
 
 
