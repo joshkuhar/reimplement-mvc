@@ -117,3 +117,46 @@ $(document).ready(function() {
     setQuestion(0);
 });
 
+/*
+var Model = function(){
+  this.questions = [["Question 1", "a"], ["Questions 2", "b"], ["Question 3", "c" ]];
+  this.answers = ["a", "b", "c"];
+};
+
+Model.prototype.getQuestion = function(questionNumber){
+  this.question = this.questions[questionNumber][0];
+  console.log(this.question);
+  console.log("Choices: " + this.answers);
+};
+
+Model.prototype.showAnswers = function(){
+  console.log(this.answers);
+};
+
+Model.prototype.checkAnswer = function(answer, questionNumber){
+  this.correct = this.questions[questionNumber][1];
+  if(answer === this.correct){
+    console.log("correct " + this.correct);
+  }
+};
+
+var questionNumber = 1;
+
+var quiz = new Model();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
