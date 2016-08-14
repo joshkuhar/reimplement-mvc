@@ -16,10 +16,11 @@ var Model = function(){
 
 //VIEW
 var View = function(){};
-
+// loads the question
 View.prototype.question = function(element, input){
   $(element).empty().append(input);
 };
+// loads the answers
 View.prototype.answers = function(answers){
    for(var answer in answers){
    $('ul').append('<li><button type="button" id="' + answers[answer] + '">' + answers[answer] + '</button></li>');
@@ -45,6 +46,7 @@ Controller.prototype.getQuestion = function(){
 Controller.prototype.displayAnswers = function(answers){
   view.answers(model.answers);
 };
+// runs game
 Controller.prototype.checkAnswers = function(){
   $('.answers').on('click', 'button', function(event){
     event.preventDefault();
