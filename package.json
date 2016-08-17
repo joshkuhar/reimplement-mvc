@@ -4,7 +4,10 @@
   "description": "",
   "main": "js/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:js": "npm run clean:js && webpack",
+    "watch:js": "npm run build:js && webpack --watch",
+    "clean:js": "rm -f build/$npm_package_name.$npm_package_version.js build/$npm_package_name.$npm_package_version.js.map"
+
   },
   "repository": {
     "type": "git",
